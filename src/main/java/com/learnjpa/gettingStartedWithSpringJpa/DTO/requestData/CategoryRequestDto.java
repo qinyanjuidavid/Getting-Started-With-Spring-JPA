@@ -1,9 +1,9 @@
-package com.learnjpa.DTO.requestData;
+package com.learnjpa.gettingStartedWithSpringJpa.DTO.requestData;
 
 import lombok.Data;
 
 @Data
 public class CategoryRequestDto {
    private String name;
-    
+
 }

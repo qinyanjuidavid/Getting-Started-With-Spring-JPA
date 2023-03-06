@@ -1,4 +1,4 @@
-package com.learnjpa.DTO.responseDto;
+package com.learnjpa.gettingStartedWithSpringJpa.DTO.responseDto;
 
 import java.util.List;
 

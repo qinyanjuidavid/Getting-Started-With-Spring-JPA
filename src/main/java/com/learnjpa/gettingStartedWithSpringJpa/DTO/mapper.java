@@ -1,12 +1,12 @@
-package com.learnjpa.DTO;
+package com.learnjpa.gettingStartedWithSpringJpa.DTO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.learnjpa.DTO.requestData.CategoryRequestDto;
-import com.learnjpa.DTO.responseDto.AuthorResponseDto;
-import com.learnjpa.DTO.responseDto.BookResponseDto;
-import com.learnjpa.DTO.responseDto.CategoryResponseDto;
+import com.learnjpa.gettingStartedWithSpringJpa.DTO.requestData.CategoryRequestDto;
+import com.learnjpa.gettingStartedWithSpringJpa.DTO.responseDto.AuthorResponseDto;
+import com.learnjpa.gettingStartedWithSpringJpa.DTO.responseDto.BookResponseDto;
+import com.learnjpa.gettingStartedWithSpringJpa.DTO.responseDto.CategoryResponseDto;
 import com.learnjpa.gettingStartedWithSpringJpa.entity.Author;
 import com.learnjpa.gettingStartedWithSpringJpa.entity.Book;
 import com.learnjpa.gettingStartedWithSpringJpa.entity.Category;
