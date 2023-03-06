@@ -3,10 +3,13 @@ package com.learnjpa.DTO;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.learnjpa.DTO.requestData.CategoryRequestDto;
 import com.learnjpa.DTO.responseDto.AuthorResponseDto;
 import com.learnjpa.DTO.responseDto.BookResponseDto;
+import com.learnjpa.DTO.responseDto.CategoryResponseDto;
 import com.learnjpa.gettingStartedWithSpringJpa.entity.Author;
 import com.learnjpa.gettingStartedWithSpringJpa.entity.Book;
+import com.learnjpa.gettingStartedWithSpringJpa.entity.Category;
 
 public class mapper {
     public static BookResponseDto bookToBookResponseDto(Book  book){
@@ -59,6 +62,38 @@ public class mapper {
             authorResponseDto.add(authorToAuthorResponseDto(author));
         }
         return authorResponseDto;
+    }
+
+    public static CategoryResponseDto categoryToCategoryDto(Category category){
+        CategoryResponseDto categoryResponseDto=new CategoryResponseDto();
+
+        categoryResponseDto.setId(category.getId());
+        categoryResponseDto.setName(category.getName());
+
+        List<String> names= new ArrayList<>();
+
+        List<Book> books = category.getBooks();
+
+        for(Book book: books){
+            names.add(book.getName());
+        }
+
+        categoryResponseDto.setBookNames(names);
+
+        return categoryResponseDto;
+
+
+    } 
+
+    public static List<CategoryResponseDto> categoriesToCategoryResponseDtos(List<Category> categories){
+        List<CategoryResponseDto> categoryResponseDtos= new ArrayList<>();
+
+        for(Category category: categories){
+            categoryResponseDtos.add(categoryToCategoryDto(category));
+
+        }
+        return categoryResponseDtos;
+
     }
 
 
