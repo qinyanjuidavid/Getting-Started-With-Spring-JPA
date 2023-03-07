@@ -3,7 +3,6 @@ package com.learnjpa.gettingStartedWithSpringJpa.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -104,15 +103,18 @@ public class BookService {
             if(bookRequestDto.getCategoryId()!=null){
                 Category category=categoryService.getCategory(bookRequestDto.getCategoryId());
 
-                bookToEdit.setAuthors(authors);
+                bookToEdit.setCategory(category);
 
             }
 
-            return mapper.bookToBookResponseDto(bookToEdit);
 
         }
+        return mapper.bookToBookResponseDto(bookToEdit);
+
 
     }
+
+
     public BookResponseDto addAuthorToBook(Long bookId, Long authorId){
         Book book=getBook(bookId);
         Author author=authorService.getAuthor(authorId);

@@ -3,7 +3,6 @@ package com.learnjpa.gettingStartedWithSpringJpa.DTO;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.learnjpa.gettingStartedWithSpringJpa.DTO.requestData.CategoryRequestDto;
 import com.learnjpa.gettingStartedWithSpringJpa.DTO.responseDto.AuthorResponseDto;
 import com.learnjpa.gettingStartedWithSpringJpa.DTO.responseDto.BookResponseDto;
 import com.learnjpa.gettingStartedWithSpringJpa.DTO.responseDto.CategoryResponseDto;

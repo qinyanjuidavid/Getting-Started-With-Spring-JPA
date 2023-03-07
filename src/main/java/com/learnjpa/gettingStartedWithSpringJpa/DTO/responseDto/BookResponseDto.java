@@ -10,5 +10,4 @@ public class BookResponseDto {
     private String name;
     private List<String> authorNames;
     private String categoryName;
-    
 }

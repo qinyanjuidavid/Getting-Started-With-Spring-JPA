@@ -14,11 +14,11 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinColumn(name="zipcode_id")
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "zipcode_id")
     private ZipCode zipcode;
-    @ManyToMany(mappedBy = "categories", cascade = CascadeType.ALL, fetch= FetchType.LAZY)
-    private List<Book> books= new ArrayList<>();
+    @ManyToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Book> books = new ArrayList<>();
 
     public Author(String name, ZipCode zipCode, List<Book> books){
         this.name=name;
