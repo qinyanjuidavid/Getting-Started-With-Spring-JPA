@@ -13,6 +13,8 @@ import com.learnjpa.gettingStartedWithSpringJpa.entity.City;
 import com.learnjpa.gettingStartedWithSpringJpa.entity.ZipCode;
 import com.learnjpa.gettingStartedWithSpringJpa.repository.ZipCodeRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class ZipCodeService {
     private final ZipCodeRepository zipCodeRepository;
@@ -24,6 +26,7 @@ public class ZipCodeService {
         this.cityService = cityService;
     }
 
+    @Transactional
     public ZipCode addZipCode(ZipCodeDto zipCodeDto) {
         ZipCode zipCode = new ZipCode();
         zipCode.setName(zipCodeDto.getName());
@@ -54,6 +57,7 @@ public class ZipCodeService {
         return zipCode;
     }
 
+    @Transactional
     public ZipCode editZipCode(Long zipCodeId, ZipCodeDto zipCodeRequesDto){
         ZipCode zipCodeToEdit= getZipCode(zipCodeId);
 
@@ -68,6 +72,7 @@ public class ZipCodeService {
         return zipCodeToEdit;
     }
 
+    @Transactional
     public ZipCode addCityToZipCode(Long zipcodeId, Long cityId){
         ZipCode zipCode=getZipCode(zipcodeId);
         City city = cityService.getCity(cityId);
@@ -79,6 +84,7 @@ public class ZipCodeService {
         return zipCode;
     }
 
+    @Transactional
     public ZipCode removeCityFromZipCode(Long zipCodeId){
         ZipCode zipCode=getZipCode(zipCodeId);
         
